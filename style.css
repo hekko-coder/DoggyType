@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+*{
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height : 100%;
+    width : 100%;
+    color : #fbcc09;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    background-color : #333;
+    position: relative;
+    
+}
+.upper img{
+    height : 45px;
+    width : 45px;
+    filter: invert();   
+}
+
+.upper h1{
+    color : #fbcc09;
+
+}
+.upper{
+    gap:10px;
+    padding : 10px;
+ 
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.header{
+    margin: 10px 20px 0 20px;
+    /* max-width: 50vw; */
+    display : flex;
+    justify-content:space-between;
+}
+
+#info{
+    font-size: 30px;
+    font-weight: 700;
+}
+#button{
+        background-color: #ffffff62;
+        color: #333;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        padding:7px 7px;
+        font-weight: 700;      
+}
+
+#button:hover{
+    background-color: #806e3e;
+    transition: 0.1s linear;
+    color: #fbcc09;
+    padding: 5px 12px;
+}
+
+
+.word{
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.game{
+    margin: 10px;
+    line-height: 35px;
+    height:  105px;
+    overflow-y: hidden ;
+    
+    position: relative;
+
+}
+
+.words{
+    filter:blur(4px);
+}
+.focuserror{
+   text-align: center;
+   padding-top:35px;
+    font-size: 40px;
+position: absolute;
+inset: 0;
+}
+
+.game:focus .words{
+    filter: blur(0)
+}
+
+.game:focus .focuserror{
+  
+    display: none;
+}
+
+.letter.correct{
+    color: #39e356d5;
+}
+
+.letter.incorrect{
+    color: rgb(215, 19, 19);
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity : 1;
+    }
+    
+}
+#cursor{
+    display: none;
+    width:2px;
+    height:1.6rem;
+    background-color: yellow;
+    position: fixed;
+    top: 123px;
+    left:12px;
+    animation: blink 1s infinite;
+}
+
+.game:focus #cursor{
+    display: block;
+
+}
+.game:focus{
+    outline: 0;
+
+}
+.gover{
+    font-size:50px;
+    top:160px;
+    position: fixed;
+    left: 540px;       
+    display: none;
+}
+
+.over .words{
+    opacity: 0.2;
+}
+.over .focuserror{
+    display: none;
+}
+.over:focus #cursor{
+    display: none;
+
+}
+
+.over .gover{
+    display: block;
+}
+
+
+.practice {
+   display: flex;
+   justify-content:center;
+   align-items:center;
+    position: relative;
+}
+.prac{
+    position: absolute;
+    top:50px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+.alphabets{
+ position: absolute;
+ top: 100px;
+ font-family: 'Roboto Mono', monospace;
+ color: white;
+}
+
+.note{
+    font-family: 'Roboto Mono', monospace;
+    position: absolute;
+    left:50px;
+    top: 200px;
+    color: white;
+}
